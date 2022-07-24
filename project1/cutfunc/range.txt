@@ -1,0 +1,11 @@
+內 range
+外 range
+大 range
+小 range
+裡 range
+以內 range
+之中 range
+之間 range
+大於 range
+小於 range
+介於 range
