@@ -7,7 +7,8 @@ from openpyxl import load_workbook
 if __name__ == '__main__':
     wb = load_workbook(filename = 'proj2.xlsx')
     sheet = wb.active
-
+    print("==================================")
+    print(sheet)
     unit = ""  ##單位
     units = []  ##存放單位(至多兩個) (目前沒用到)
 
@@ -17,6 +18,8 @@ def find_unit(list2,list3):
     
     global unit,units
     
+    wb = load_workbook(filename = 'proj2.xlsx')
+    sheet = wb.active
     
     unit = ""
     units = []
@@ -25,21 +28,25 @@ def find_unit(list2,list3):
 
         
 
-        if (type(sheet.cell(row=1,column=i).value) !=str) and (type(sheet.cell(row=1,column=i).value) !=int) :  ##如果資料為空的，就退出
+        try :
+            if (type(sheet.cell(row=1,column=i).value) !=str) and (type(sheet.cell(row=1,column=i).value) !=int) :  ##如果資料為空的，就退出
                 break
-        else:
+        
+            else:
 
-            if sheet.cell(row=2,column=i).value=="單位":
-                unit = sheet.cell(row=1,column=i).value
+                if sheet.cell(row=2,column=i).value=="單位":
+                    unit = sheet.cell(row=1,column=i).value
 
-                if unit=="錢":
-                    unit = "元"
-                    
-                if sheet.cell(row=2,column=i).value in ["大","小"]:
-                    unit = ""
+                    if unit=="錢":
+                        unit = "元"
+                        
+                    if sheet.cell(row=2,column=i).value in ["大","小"]:
+                        unit = ""
 
-                if unit!="":
-                    units.append(unit)
+                    if unit!="":
+                        units.append(unit)
+        except : 
+            print("877564")
 
     
 
