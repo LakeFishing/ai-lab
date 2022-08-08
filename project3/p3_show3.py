@@ -221,11 +221,11 @@ def draw(cv,sheet):
                     print("接受者:",name2,"，座標 : ",str(right_x+oval_w/2),str(right_y))
                     
                     if keys4[i][0]=="+":
-                        word1="-"
-                        word2="+"
-                    elif keys4[i][0]=="-":
                         word1="+"
                         word2="-"
+                    elif keys4[i][0]=="-":
+                        word1="-"
+                        word2="+"
                     else:
                         word1="="
                         word2="="
@@ -588,11 +588,11 @@ def draw(cv,sheet):
                         
 
                         if keys4[i][0] == "+":
-                            word1 = "-"
-                            word2 = "+"
-                        elif  keys4[i][0] == "-":
                             word1 = "+"
                             word2 = "-"
+                        elif  keys4[i][0] == "-":
+                            word1 = "-"
+                            word2 = "+"
                         else:
                             word1 = "="
                             word2 = "="
@@ -622,11 +622,11 @@ def draw(cv,sheet):
 
                         if keys4[i][0] == "+":
                                
-                            word1 = "+"
-                            word2 = "-"
-                        elif keys4[i][0] == "-":
                             word1 = "-"
                             word2 = "+"
+                        elif keys4[i][0] == "-":
+                            word1 = "+"
+                            word2 = "-"
                         else:
                             word1 = "="
                             word2 = "="
@@ -668,11 +668,11 @@ def draw(cv,sheet):
                            # 
 
                             if keys4[i][0] == "+":
-                                word1 = "-"
-                                word2 = "+"
-                            elif keys4[i][0] == "-":
                                 word1 = "+"
                                 word2 = "-"
+                            elif keys4[i][0] == "-":
+                                word1 = "-"
+                                word2 = "+"
                             else:
                                 word1 = "="
                                 word2 = "="
@@ -702,11 +702,11 @@ def draw(cv,sheet):
 
                             if keys4[i][0] == "+":
                                    
-                                word1 = "+"
-                                word2 = "-"
-                            elif keys4[i][0] == "-":
                                 word1 = "-"
                                 word2 = "+"
+                            elif keys4[i][0] == "-":
+                                word1 = "+"
+                                word2 = "-"
                             else:
                                 word1 = "="
                                 word2 = "="
