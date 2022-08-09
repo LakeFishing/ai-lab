@@ -252,9 +252,9 @@ def load_excel(i,sheet,is_first):   ##匯入詞彙進行處理
 
                 elif sheet.cell(row=i-1,column=j).value in ['買','合買','買了'] and sheet.cell(row=i,column=j).value=="+" :#and temp_plus!="" and is_first==False :#(temp_unit=="元" or temp_item=="錢"):
                     ##我有X元，買了1個10元橡皮擦，剩下幾元
-                    list4.append("+")
+                    list4.append("-")
                     list5.append(sheet.cell(row=i,column=j).value)
-                    temp_plus = "+"
+                    temp_plus = "-"
                     buy = True  ##
 ##                elif sheet.cell(row=i-1,column=j).value in ['拿走'] and sheet.cell(row=i,column=j).value=="+" and list1==[]:
 ##                    list4.append("-")
@@ -266,6 +266,26 @@ def load_excel(i,sheet,is_first):   ##匯入詞彙進行處理
 ##                    temp_plus = "+"
 
                 elif sheet.cell(row=i-1,column=j).value in ['給','分給'] and sheet.cell(row=i,column=j).value=="-" :
+                    list4.append("+")
+                    list5.append(sheet.cell(row=i,column=j).value)
+                    temp_plus = "+"
+                
+                elif sheet.cell(row=i-1,column=j).value in ['煮','煮了'] and sheet.cell(row=i,column=j).value=="+" :
+                    list4.append("-")
+                    list5.append(sheet.cell(row=i,column=j).value)
+                    temp_plus = "-"
+                
+                elif sheet.cell(row=i-1,column=j).value in ['吃','吃了'] and sheet.cell(row=i,column=j).value=="+" :
+                    list4.append("-")
+                    list5.append(sheet.cell(row=i,column=j).value)
+                    temp_plus = "-"
+                
+                elif sheet.cell(row=i-1,column=j).value in ['放進'] and sheet.cell(row=i,column=j).value=="+" :
+                    list4.append("-")
+                    list5.append(sheet.cell(row=i,column=j).value)
+                    temp_plus = "-"
+
+                elif sheet.cell(row=i-1,column=j).value in ['跳走'] and sheet.cell(row=i,column=j).value=="-" :
                     list4.append("+")
                     list5.append(sheet.cell(row=i,column=j).value)
                     temp_plus = "+"

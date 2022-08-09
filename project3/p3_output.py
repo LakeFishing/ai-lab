@@ -443,9 +443,9 @@ def create(keys1,keys2,keys3,keys4,keys5,f,is_plus,is_remain,is_do,is_total,chan
             
             ##根據前面的+-=，去判斷下一個+-=為何
             if name == "+":  ##如果前面為+，則接下來為-
-                name = "+"  
+                name = "-"  
             elif name == "-":  ##如果前面為-，則接下來為+
-                name = "-"
+                name = "+"
             elif name=="=":
                 name="="
 

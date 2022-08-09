@@ -61,6 +61,6 @@
 往下降 nv
 賣出 nv
 用去 nv
-放進 nv
-放進去 nv
 分給 nv
+買完 nv
+送出 nv

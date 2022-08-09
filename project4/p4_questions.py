@@ -1568,11 +1568,11 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
                                     total.append(add)
                                     print(3,opr,add)
 
-                                elif opr=="+":
+                                elif opr=="-":
                                     sum_+= add
                                     print(3,opr,add)
                                         
-                                elif opr=="-":
+                                elif opr=="+":
                                         
                                     sum_-= add
                                     print(3,opr,add)
@@ -1610,10 +1610,10 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
                                     total.append(add)
                                     print(3,opr,add)
 
-                                elif opr=="+":
+                                elif opr=="-":
                                     sum_+= add
                                     print(3,opr,add)
-                                elif opr=="-":
+                                elif opr=="+":
                                     
                                     sum_-= add
                                     print(3,sum_,add)
@@ -1629,8 +1629,8 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
 
     if unit=="層" or unit=="樓":
         for i in total:
-            final_num+=i
-        final_num+=sum_
+            final_num-=i
+        final_num-=sum_
         return final_num
 
     if is_plus==False:
@@ -2101,13 +2101,13 @@ def question8(name,item,unit,d1,d2,d3,quan):     ##如果問題中，包含,物�
 #####################算出答案#################################################
     
     for i in total:
-        final_num = abs(final_num+i)
+        final_num = abs(final_num-i)
         #print(final_num)
 
 
     
     
-    final_num-=add
+    final_num+=add
 
     
 
