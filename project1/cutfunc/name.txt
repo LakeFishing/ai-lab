@@ -8,6 +8,7 @@
 丁 name
 戊 name
 它 name
+醫生 name
 雅旋 name
 世揚 name
 薏淩 name

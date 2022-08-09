@@ -24,7 +24,6 @@
 批改 pv
 剩下 pv
 前進 pv
-走了 pv
 收服 pv
 養了 pv
 寫了 pv
