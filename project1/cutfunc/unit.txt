@@ -97,6 +97,7 @@
 艘 bunit
 頂 bunit
 號 bunit
+種 bunit
 期 tunit
 周 tunit
 週 tunit
