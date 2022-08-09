@@ -39,7 +39,6 @@
 存入 pv
 找回 pv
 買了 pv
-買走 pv
 買進 pv
 合買 pv
 不夠 pv
