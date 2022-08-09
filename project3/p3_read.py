@@ -266,9 +266,9 @@ def load_excel(i,sheet,is_first):   ##匯入詞彙進行處理
 ##                    temp_plus = "+"
 
                 elif sheet.cell(row=i-1,column=j).value in ['給','分給'] and sheet.cell(row=i,column=j).value=="-" :
-                    list4.append("+")
+                    list4.append("-")
                     list5.append(sheet.cell(row=i,column=j).value)
-                    temp_plus = "+"
+                    temp_plus = "-"
                 
                 elif sheet.cell(row=i-1,column=j).value in ['煮','煮了'] and sheet.cell(row=i,column=j).value=="+" :
                     list4.append("-")
@@ -280,15 +280,15 @@ def load_excel(i,sheet,is_first):   ##匯入詞彙進行處理
                     list5.append(sheet.cell(row=i,column=j).value)
                     temp_plus = "-"
                 
-                elif sheet.cell(row=i-1,column=j).value in ['放進'] and sheet.cell(row=i,column=j).value=="+" :
-                    list4.append("-")
-                    list5.append(sheet.cell(row=i,column=j).value)
-                    temp_plus = "-"
+                # elif sheet.cell(row=i-1,column=j).value in ['排在'] and sheet.cell(row=i,column=j).value=="=" :
+                #     list4.append("-")
+                #     list5.append(sheet.cell(row=i,column=j).value)
+                #     temp_plus = "-"
 
-                elif sheet.cell(row=i-1,column=j).value in ['跳走'] and sheet.cell(row=i,column=j).value=="-" :
-                    list4.append("+")
-                    list5.append(sheet.cell(row=i,column=j).value)
-                    temp_plus = "+"
+                # elif sheet.cell(row=i-1,column=j).value in ['跳走'] and sheet.cell(row=i,column=j).value=="-" :
+                #     list4.append("+")
+                #     list5.append(sheet.cell(row=i,column=j).value)
+                #     temp_plus = "+"
                     
                 elif sheet.cell(row=i-1,column=j).value!="比":
 
