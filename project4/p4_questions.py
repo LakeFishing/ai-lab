@@ -293,6 +293,8 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
                     sum_,total = check_item(i,d2,count_people,items,temp_p,sum_,total)
                     
                     print("直接從物品找數字做計算")
+                    print(sum_)
+                    print(total)
 
 
                         
@@ -304,6 +306,7 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
 
 
                         sum_,total = change_to_people(i,d2,peoples,items,temp_p,units,sum_,total,count_people)
+                        
 
                         
                 
@@ -330,8 +333,9 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
                 
 
 ########### 依照變數，去做計算，輸出一個final_num ###############################
-    
-    
+
+
+
     if is_remain==True:
         
         
@@ -354,6 +358,7 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
             
             
             print(total)
+            final_num = abs(sum_)
 
         
             
@@ -614,7 +619,7 @@ def check_item(i,d2,count_people,items,temp_p,sum_,total):  ##直接從物品-�
     peoples = d2[i][0]  ##這個詞最底層的位置(單位出現的位置)
 
 
-    #print(items)
+    print(items)
     if len(items)!=0 :   ##如果可以直接從物品-單位找出運算
         
         #print("直接從物品找數字做計算")
@@ -644,18 +649,18 @@ def check_item(i,d2,count_people,items,temp_p,sum_,total):  ##直接從物品-�
                     if opr=="=":
                         
                         total.append(add)   ##如果是=，則將數字放到total中
-                        #print(3,opr,add)
+                        print(3,opr,add)
                     
                     elif opr =="+" and count_people==0:  ##如果是+，則sum_ 會加入這個值
                         
                         sum_+=(add)
-                        #print(3,opr,add)
+                        print(3,opr,add)
                             
 
                     elif opr =="-" and count_people==0:  ##如果是+，則sum_ 會扣掉這個值
                         
                         sum_-=(add)
-                        #print(3,opr,add)
+                        print(3,opr,add)
     return sum_,total
 
 def question3(init_list,name,item,unit,d1,d2,d3,big,big_small,oppo,true_false):     ##如果問題中，包含主事者,物品,單位。題目類型:比大小

@@ -280,10 +280,10 @@ def load_excel(i,sheet,is_first):   ##匯入詞彙進行處理
                     list5.append(sheet.cell(row=i,column=j).value)
                     temp_plus = "-"
                 
-                # elif sheet.cell(row=i-1,column=j).value in ['排在'] and sheet.cell(row=i,column=j).value=="=" :
-                #     list4.append("-")
+                # elif sheet.cell(row=i-1,column=j).value in ['剩下','還有'] and sheet.cell(row=i,column=j).value=="-" :
+                #     list4.append("=")
                 #     list5.append(sheet.cell(row=i,column=j).value)
-                #     temp_plus = "-"
+                #     temp_plus = "="
 
                 # elif sheet.cell(row=i-1,column=j).value in ['跳走'] and sheet.cell(row=i,column=j).value=="-" :
                 #     list4.append("+")
