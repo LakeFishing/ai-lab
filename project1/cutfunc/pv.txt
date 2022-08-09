@@ -69,7 +69,9 @@
 買來 pv
 加起來 pv
 上來 pv
-借走 pv
 合買 pv
 放進 pv
 放進去 pv
+進貨 pv
+進入 pv
+跳來 pv
