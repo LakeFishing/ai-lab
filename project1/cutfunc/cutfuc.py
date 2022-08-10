@@ -44,7 +44,6 @@ jieba.del_word("三位")
 jieba.del_word("第二天")
 jieba.del_word("第三天")
 jieba.del_word("小猴子")
-jieba.del_word("安排")
 
 jieba.load_userdict("project1/cutfunc/and.txt")
 jieba.load_userdict("project1/cutfunc/range.txt")
