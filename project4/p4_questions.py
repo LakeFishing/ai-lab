@@ -152,9 +152,11 @@ def question1(people,name,item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問
         for i in total:
 
             final_num= abs(final_num-i)
-
+            print(i)
             #
-        final_num-=sum_
+        final_num+=sum_
+        print(final_num)
+
         
             
             
@@ -355,10 +357,24 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
             final_num = abs(final_num+sum_)
 
         elif len(total)==0 :
-            
-            
-            print(total)
-            final_num = abs(sum_)
+
+            if len(items)==1:
+                new_list = ",".join(temp_people)
+                num_list = re.findall(r"\d+",new_list)
+                num_list_int = list(map(int,num_list))
+                #print(num_list_int)
+                add = int(num_list_int[0])
+                final_num = sum_+add
+                   
+                print(total)
+                print(add)
+                print(sum_)
+                print(temp_people)
+                print(final_num)
+
+            else :
+                print(total)
+                final_num = abs(sum_)
 
         
             
@@ -1056,6 +1072,7 @@ def question4(people,name,item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問
         
         ##如果題目中有剩下，則做倒推運算
         ##ex : 我有30元，花了一些錢後，剩下20元。我花了多少元?
+        
         
         if len(total)==1:
             final_num = total[0]-sum_
