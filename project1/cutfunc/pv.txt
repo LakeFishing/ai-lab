@@ -24,7 +24,6 @@
 批改 pv
 剩下 pv
 前進 pv
-走了 pv
 收服 pv
 養了 pv
 寫了 pv
@@ -40,7 +39,6 @@
 存入 pv
 找回 pv
 買了 pv
-買走 pv
 買進 pv
 合買 pv
 不夠 pv
@@ -70,7 +68,9 @@
 買來 pv
 加起來 pv
 上來 pv
-借走 pv
 合買 pv
 放進 pv
 放進去 pv
+進貨 pv
+進入 pv
+跳來 pv
