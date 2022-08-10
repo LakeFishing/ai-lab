@@ -102,6 +102,7 @@
 玩具店 place
 孤兒院 place
 飲料店 place
+飲料店鋪 place
 麥當勞 place
 特賣會 place
 印刷廠 place
@@ -159,7 +160,6 @@
 廣場 place
 路邊 place
 超市 place
-蛋糕店 place
 圖書館 place
 游泳池 place
 公車上 place
