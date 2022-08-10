@@ -511,7 +511,7 @@ def read(keys1,keys2,keys3,keys4,keys5,sheet,output_type):
 
         check = check_enter(list1,list2,list3,list4,list5,list6,list7,is_first,temp_name,compare,is_and)  ##判斷是否做後續處理
 
-
+        
         
         if check==False:
             
