@@ -633,6 +633,7 @@ def check_item(i,d2,count_people,items,temp_p,sum_,total):  ##直接從物品-�
     ##sum_ : 整數，對應到+或-，直接先做計算
 
     peoples = d2[i][0]  ##這個詞最底層的位置(單位出現的位置)
+    t = 2
 
 
     print(items)
@@ -673,10 +674,15 @@ def check_item(i,d2,count_people,items,temp_p,sum_,total):  ##直接從物品-�
                         print(3,opr,add)
                             
 
-                    elif opr =="-" and count_people==0:  ##如果是+，則sum_ 會扣掉這個值
+                    elif opr =="-" and count_people==0:  ##如果是-，則sum_ 會扣掉這個值
                         
-                        sum_-=(add)
-                        print(3,opr,add)
+                        if len(total) == 0 :
+                            total.append(add)
+                            print(total)
+                            
+                        else : 
+                            sum_-=(add)                           
+                            print(3,opr,add)
     return sum_,total
 
 def question3(init_list,name,item,unit,d1,d2,d3,big,big_small,oppo,true_false):     ##如果問題中，包含主事者,物品,單位。題目類型:比大小

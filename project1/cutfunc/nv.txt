@@ -58,13 +58,9 @@
 少存了 nv
 賣了 nv
 賣出 nv
-往下 nv
 往下降 nv
+賣出 nv
 用去 nv
 分給 nv
 買完 nv
 送出 nv
-喝掉 nv
-借走 nv
-發下 nv
-買走 nv
