@@ -8,9 +8,6 @@
 丁 name
 戊 name
 它 name
-小哲 name
-小安 name
-醫生 name
 雅旋 name
 世揚 name
 薏淩 name
@@ -418,6 +415,7 @@
 尼克 name
 阿晉 name
 萱萱 name
+小安 name
 迪西 name
 小波 name
 羽曼 name
@@ -514,7 +512,6 @@
 林奶奶 name
 魔法師 name
 孫悟空 name
-體育老師 name
 麗秋老師 name
 美華老師 name
 秉鈞老師 name
