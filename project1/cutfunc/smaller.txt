@@ -6,3 +6,4 @@
 便宜 smaller
 最小 smaller
 最快 smaller
+小 smaller

@@ -6,3 +6,4 @@
 貴 bigger
 最大 bigger
 最慢 bigger
+大 bigger
