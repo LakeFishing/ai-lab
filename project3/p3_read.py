@@ -266,9 +266,9 @@ def load_excel(i,sheet,is_first):   ##匯入詞彙進行處理
 ##                    temp_plus = "+"
 
                 elif sheet.cell(row=i-1,column=j).value in ['給','分給'] and sheet.cell(row=i,column=j).value=="-" :
-                    list4.append("+")
+                    list4.append("-")
                     list5.append(sheet.cell(row=i,column=j).value)
-                    temp_plus = "+"
+                    temp_plus = "-"
                 
                 elif sheet.cell(row=i-1,column=j).value in ['煮','煮了'] and sheet.cell(row=i,column=j).value=="+" :
                     list4.append("-")
@@ -280,15 +280,15 @@ def load_excel(i,sheet,is_first):   ##匯入詞彙進行處理
                     list5.append(sheet.cell(row=i,column=j).value)
                     temp_plus = "-"
                 
-                elif sheet.cell(row=i-1,column=j).value in ['放進'] and sheet.cell(row=i,column=j).value=="+" :
-                    list4.append("-")
-                    list5.append(sheet.cell(row=i,column=j).value)
-                    temp_plus = "-"
+                # elif sheet.cell(row=i-1,column=j).value in ['剩下','還有'] and sheet.cell(row=i,column=j).value=="-" :
+                #     list4.append("=")
+                #     list5.append(sheet.cell(row=i,column=j).value)
+                #     temp_plus = "="
 
-                elif sheet.cell(row=i-1,column=j).value in ['跳走'] and sheet.cell(row=i,column=j).value=="-" :
-                    list4.append("+")
-                    list5.append(sheet.cell(row=i,column=j).value)
-                    temp_plus = "+"
+                # elif sheet.cell(row=i-1,column=j).value in ['跳走'] and sheet.cell(row=i,column=j).value=="-" :
+                #     list4.append("+")
+                #     list5.append(sheet.cell(row=i,column=j).value)
+                #     temp_plus = "+"
                     
                 elif sheet.cell(row=i-1,column=j).value!="比":
 
@@ -511,7 +511,7 @@ def read(keys1,keys2,keys3,keys4,keys5,sheet,output_type):
 
         check = check_enter(list1,list2,list3,list4,list5,list6,list7,is_first,temp_name,compare,is_and)  ##判斷是否做後續處理
 
-
+        
         
         if check==False:
             

@@ -152,9 +152,11 @@ def question1(people,name,item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問
         for i in total:
 
             final_num= abs(final_num-i)
-
+            print(i)
             #
-        final_num-=sum_
+        final_num+=sum_
+        print(final_num)
+
         
             
             
@@ -293,6 +295,8 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
                     sum_,total = check_item(i,d2,count_people,items,temp_p,sum_,total)
                     
                     print("直接從物品找數字做計算")
+                    print(sum_)
+                    print(total)
 
 
                         
@@ -304,6 +308,7 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
 
 
                         sum_,total = change_to_people(i,d2,peoples,items,temp_p,units,sum_,total,count_people)
+                        
 
                         
                 
@@ -330,8 +335,9 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
                 
 
 ########### 依照變數，去做計算，輸出一個final_num ###############################
-    
-    
+
+
+
     if is_remain==True:
         
         
@@ -351,9 +357,24 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
             final_num = abs(final_num+sum_)
 
         elif len(total)==0 :
-            
-            
-            print(total)
+
+            if len(items)==1:
+                new_list = ",".join(temp_people)
+                num_list = re.findall(r"\d+",new_list)
+                num_list_int = list(map(int,num_list))
+                #print(num_list_int)
+                add = int(num_list_int[0])
+                final_num = sum_+add
+                   
+                print(total)
+                print(add)
+                print(sum_)
+                print(temp_people)
+                print(final_num)
+
+            else :
+                print(total)
+                final_num = abs(sum_)
 
         
             
@@ -612,9 +633,10 @@ def check_item(i,d2,count_people,items,temp_p,sum_,total):  ##直接從物品-�
     ##sum_ : 整數，對應到+或-，直接先做計算
 
     peoples = d2[i][0]  ##這個詞最底層的位置(單位出現的位置)
+    t = 2
 
 
-    #print(items)
+    print(items)
     if len(items)!=0 :   ##如果可以直接從物品-單位找出運算
         
         #print("直接從物品找數字做計算")
@@ -644,18 +666,23 @@ def check_item(i,d2,count_people,items,temp_p,sum_,total):  ##直接從物品-�
                     if opr=="=":
                         
                         total.append(add)   ##如果是=，則將數字放到total中
-                        #print(3,opr,add)
+                        print(3,opr,add)
                     
                     elif opr =="+" and count_people==0:  ##如果是+，則sum_ 會加入這個值
                         
                         sum_+=(add)
-                        #print(3,opr,add)
+                        print(3,opr,add)
                             
 
-                    elif opr =="-" and count_people==0:  ##如果是+，則sum_ 會扣掉這個值
+                    elif opr =="-" and count_people==0:  ##如果是-，則sum_ 會扣掉這個值
                         
-                        sum_-=(add)
-                        #print(3,opr,add)
+                        if len(total) == 0 :
+                            total.append(add)
+                            print(total)
+                            
+                        else : 
+                            sum_-=(add)                           
+                            print(3,opr,add)
     return sum_,total
 
 def question3(init_list,name,item,unit,d1,d2,d3,big,big_small,oppo,true_false):     ##如果問題中，包含主事者,物品,單位。題目類型:比大小
@@ -1045,6 +1072,7 @@ def question4(people,name,item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問
         
         ##如果題目中有剩下，則做倒推運算
         ##ex : 我有30元，花了一些錢後，剩下20元。我花了多少元?
+        
         
         if len(total)==1:
             final_num = total[0]-sum_

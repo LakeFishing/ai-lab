@@ -1,4 +1,0 @@
-proj2.xlsx
-project1/input/*.txt
-project3/*.txt
-project1/process/
