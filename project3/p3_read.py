@@ -81,6 +81,7 @@ is_total = False  ##判斷句子中是否有"共有"
 is_and = False
 
 add_back = False ##判斷句子中是否有"不夠"，解題時加回去
+no_have = False ##
 
 conj = False ##是否有連接詞(目前沒用到)
 change_plus=False ##是否有"其中"或"其他"，解題時用倒扣的
@@ -117,7 +118,7 @@ def load_excel(i,sheet,is_first):   ##匯入詞彙進行處理
 
     global temp_name,temp_plus,is_people,init_type,current_type,temp_item,temp_unit
 
-    global is_do ,yet ,compare,is_plus,temp_time,is_remain,is_total,conj,change_plus,plus_one,pre,post,first_place,buy,is_and,add_back
+    global is_do ,yet ,compare,is_plus,temp_time,is_remain,is_total,conj,change_plus,plus_one,pre,post,first_place,buy,is_and,add_back,no_have
 
     global keys1,keys2,keys3,keys4,keys5
 
@@ -264,6 +265,12 @@ def load_excel(i,sheet,is_first):   ##匯入詞彙進行處理
 ##                    list4.append("+")
 ##                    list5.append(sheet.cell(row=i,column=j).value)
 ##                    temp_plus = "+"
+                # elif sheet.cell(row=i-1,column=j).value=="後" :
+
+                #     if sheet.cell(row=i-1,column=j).value in ['買','買了'] and sheet.cell(row=i,column=j).value=="+" :
+                #         list4.append("+")
+                #         list5.append(sheet.cell(row=i,column=j).value)
+                #         temp_plus = "+"
 
                 elif sheet.cell(row=i-1,column=j).value in ['給','分給'] and sheet.cell(row=i,column=j).value=="-" :
                     list4.append("-")
@@ -339,6 +346,10 @@ def load_excel(i,sheet,is_first):   ##匯入詞彙進行處理
                 if sheet.cell(row=i-1,column=j).value in ["不夠"]:
                     
                     add_back = True
+
+                if sheet.cell(row=i-1,column=j).value in ["沒","沒有"]:
+                
+                    no_have = True
                     
 
 ##                  
@@ -462,7 +473,7 @@ def read(keys1,keys2,keys3,keys4,keys5,sheet,output_type):
 
     global temp_name,temp_plus,is_people,init_type,current_type,temp_item,temp_unit,is_total
 
-    global is_do ,yet ,compare,is_plus,temp_time,is_remain,conj,first_place,is_and,add_back
+    global is_do ,yet ,compare,is_plus,temp_time,is_remain,conj,first_place,is_and,add_back,no_have
 
     global list1,list2,list3,list4,list5,list6,list7,list8
 
@@ -638,7 +649,7 @@ def read(keys1,keys2,keys3,keys4,keys5,sheet,output_type):
 
     
    
-    return keys1,keys2,keys3,keys4,keys5,is_plus,is_remain,is_do,is_total,change_plus,plus_one,add_back
+    return keys1,keys2,keys3,keys4,keys5,is_plus,is_remain,is_do,is_total,change_plus,plus_one,add_back,no_have
 
 
 

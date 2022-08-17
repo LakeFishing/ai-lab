@@ -20,6 +20,7 @@
 ###############################影響計算的參數#####################################################
 
 
+from doctest import FAIL_FAST
 import sys
 
 sys.dont_write_bytecode = True
@@ -127,6 +128,8 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
     change_plus = False  ##判斷"="的項目是否全部用扣的
 
     add_back = False  ##判斷是否加回去
+
+    no_have = False
 
     is_total = False ##問題中是否有"一共"
 
@@ -466,10 +469,22 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
 
     if "不夠" in d2:
         add_back = True
+    
+    if "沒" in d2:
+        no_have = True
+
+    if "沒有" in d2:
+        no_have = True
+
+    if "沒" in q1:
+        no_have = True
+
+    if "沒有" in q1:
+        no_have = True
 
     
     
-    p4_questions.attr(is_reverse,is_minus,is_plus,is_differ,is_total,is_remain,change_plus,quan,m_num,s_unit,add_back)   ##設定解題時的變數
+    p4_questions.attr(is_reverse,is_minus,is_plus,is_differ,is_total,is_remain,change_plus,quan,m_num,s_unit,add_back,no_have)   ##設定解題時的變數
 
     
     if name!="" and len(times)==1 and times[0] in d2 :   ##如果有時間，又有主事者，則時間會變成主事者
