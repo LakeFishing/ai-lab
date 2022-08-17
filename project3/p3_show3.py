@@ -80,7 +80,7 @@ def draw(cv,sheet):
 
     
 
-    keys1,keys2,keys3,keys4,keys5,is_plus,is_remain,is_do,is_total,change_plus,plus_one,add_back = p3_read.read(keys1,keys2,keys3,keys4,keys5,sheet,"img")
+    keys1,keys2,keys3,keys4,keys5,is_plus,is_remain,is_do,is_total,change_plus,plus_one,add_back,no_have = p3_read.read(keys1,keys2,keys3,keys4,keys5,sheet,"img")
     
     print("讀取excel，做處理")
     
