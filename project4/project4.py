@@ -482,6 +482,9 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
     if "沒有" in q1:
         no_have = True
 
+    if "完" in d2:
+        no_have = True
+
     
     
     p4_questions.attr(is_reverse,is_minus,is_plus,is_differ,is_total,is_remain,change_plus,quan,m_num,s_unit,add_back,no_have)   ##設定解題時的變數
