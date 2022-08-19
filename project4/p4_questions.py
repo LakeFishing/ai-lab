@@ -343,7 +343,15 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
 
 ########### 依照變數，去做計算，輸出一個final_num ###############################
 
+    if no_have == True : 
+        
+        if sum_ != 0:
+            print(sum_)
+            final_num = sum_
+        else:
+            final_num = total[0]*2
 
+        return abs(int(final_num/2))
 
     if is_remain==True:
         
@@ -1445,25 +1453,34 @@ def additional(name,item,unit,d1,d2):
     
 ################################################## 算出答案 #########################################
 
-    # if name == "" :
+    if name == "" :
 
-    #     print(total)
-    #     if total[0] > total[1] :
-    #         final_num = total[0] - total[1]
-    #     else :
-    #         final_num = total[1] - total[0]
+        print(total)
+        if total[0] > total[1] :
+            final_num = total[0] - total[1]
+        else :
+            final_num = total[1] - total[0]
             
-    #     return abs(int(final_num/2))
+        return abs(int(final_num/2))
+
+    if no_have == True:
+
+        final_num = int(final_num/2)
+
+        return abs(final_num)
     
     if name!="" or (item!="" and d2[item][1][0]!="none") :  ##如果主事者不為空或是物品不為空(且+-=不為none)，則只要做一次計算
 
         
 
         for i in range(len(sum_)):
-            
+
+            print(sum_)
             final_num+=sum_[i]
             print(final_num)
 
+        print(d1)
+        print(d2)    
         final_num+=total[0]
             
     else:
@@ -1595,7 +1612,7 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
                         
                         name = x
                         print(2,"主角",x)
-                        print(no_have)
+                        # print(no_have)
                         main = True
 
                         for i in range(len(d2[x][1])):  ##以此主角往下找出+-=與數字
@@ -1641,6 +1658,7 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
 
                         
                         name = x
+                        print(2,x)
 
                         #if len(d3[s[0]][1])!=0 :
 
@@ -1876,7 +1894,9 @@ def question6(people,obj,name,item,unit,d1,d2,d3,quan,peoples):
     elif len(peoples)==2:
 
         u1 = additional(peoples[0],item,unit,d1,d2)
+        print(u1)
         u2 = additional(peoples[1],item,unit,d1,d2)
+        print(u2)
 
 ######如果問題裡面有主事者和接受者超過兩個，則找出相對應的數字，做計算#############################
 
@@ -1898,8 +1918,13 @@ def question6(people,obj,name,item,unit,d1,d2,d3,quan,peoples):
 ##############################依照變數去做計算###################################
 
     if item!="" or unit!="":##如果物品跟單位不為空值
+
+        if u1 == u2 :
+
+            final_num = u1
         
-        
+            return abs(final_num)
+
         if is_plus==False :
 
             ##例如 : 我有20元，你比我多10元。你和我共有多少元?
@@ -2278,7 +2303,9 @@ def question9(items,unit,d1,d2,d3,quan):     ##如果問題中，包含,兩個�
         final_num = abs(t1-t2)
     elif change_plus==True:
         final_num = abs(t1-t2)
-        
+
+    elif no_have == True:
+        final_num = abs(t1)    
 
     else:
         final_num = abs(t1+t2)
