@@ -1,6 +1,5 @@
 寬 adj
 空 adj
-貴 adj
 紅 adj
 橙 adj
 黃 adj
@@ -15,7 +14,6 @@
 完 adj
 青 adj
 所有 adj
-相同 adj
 故障 adj
 粉紅 adj
 空的 adj
@@ -31,7 +29,6 @@
 彩色 adj
 適當 adj
 正確 adj
-相同 adj
 特別 adj
 所在 adj
 頑皮 adj
@@ -43,7 +40,6 @@
 綠色 adj
 黃色 adj
 灰色 adj
-紅色 adj
 橙色 adj
 青色 adj
 橘色 adj

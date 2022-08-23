@@ -6,6 +6,7 @@
 逆 nv
 摔破 nv
 採走 nv
+下車 nv
 下船 nv
 下去 nv
 走掉 nv
@@ -19,7 +20,6 @@
 省下 nv
 破了 nv
 用掉 nv
-拿出 nv
 走了 nv
 後退 nv
 退出 nv
@@ -28,14 +28,12 @@
 發給 nv
 開走 nv
 拿了 nv
-拿走 nv
 上岸 nv
 投出 nv
 特價 nv
 切掉 nv
 打破 nv
 飛走 nv
-後退 nv
 離開 nv
 賣掉 nv
 跑走 nv
