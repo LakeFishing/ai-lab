@@ -1645,8 +1645,10 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
                                     sum_-= add
                                     print(3,opr,add)
                                 
-                                    
-                        break
+                        if temp_name[0] == "媽媽" and temp_name[1] == "爸爸" :
+                            main = False 
+                        else:           
+                            break
 
 ###################################如果沒有特定主角，則每一個對應到的數字都做處理##########################################
                     
