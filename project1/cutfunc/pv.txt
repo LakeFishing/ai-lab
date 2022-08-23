@@ -30,7 +30,6 @@
 烤了 pv
 跳上 pv
 得到 pv
-放入 pv
 盛好 pv
 爬到 pv
 開了 pv
@@ -66,8 +65,6 @@
 買來 pv
 加起來 pv
 上來 pv
-合買 pv
-放進 pv
 放進去 pv
 進貨 pv
 進入 pv
