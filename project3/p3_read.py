@@ -277,15 +277,15 @@ def load_excel(i,sheet,is_first):   ##匯入詞彙進行處理
                     list5.append(sheet.cell(row=i,column=j).value)
                     temp_plus = "-"
                 
-                elif sheet.cell(row=i-1,column=j).value in ['煮','煮了'] and sheet.cell(row=i,column=j).value=="+" :
-                    list4.append("-")
-                    list5.append(sheet.cell(row=i,column=j).value)
-                    temp_plus = "-"
+                # elif sheet.cell(row=i-1,column=j).value in ['煮','煮了'] and sheet.cell(row=i,column=j).value=="+" :
+                #     list4.append("-")
+                #     list5.append(sheet.cell(row=i,column=j).value)
+                #     temp_plus = "-"
                 
-                elif sheet.cell(row=i-1,column=j).value in ['吃','吃了'] and sheet.cell(row=i,column=j).value=="+" :
-                    list4.append("-")
-                    list5.append(sheet.cell(row=i,column=j).value)
-                    temp_plus = "-"
+                # elif sheet.cell(row=i-1,column=j).value in ['吃','吃了'] and sheet.cell(row=i,column=j).value=="+" :
+                #     list4.append("-")
+                #     list5.append(sheet.cell(row=i,column=j).value)
+                #     temp_plus = "-"
                 
                 elif sheet.cell(row=i-1,column=j).value in ['沒收服'] and sheet.cell(row=i,column=j).value=="+" :
                     list4.append("-")
@@ -574,7 +574,10 @@ def read(keys1,keys2,keys3,keys4,keys5,sheet,output_type):
             
             if len(list1)==1:  ##主事者接受者數量為1
 
-                
+                if list1[0] != "媽媽" and list2[0] == "水餃": ## 雙主事者無接受者卻要做連結的情況
+                    list1.insert(0,"媽媽")
+                    list4.pop()
+                    list4.append("-")
                 
                 
                 if len(list4)==0:
