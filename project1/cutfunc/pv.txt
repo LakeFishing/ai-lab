@@ -23,7 +23,6 @@
 蒐集 pv
 收集 pv
 批改 pv
-剩下 pv
 前進 pv
 收服 pv
 養了 pv
@@ -42,8 +41,6 @@
 買了 pv
 買進 pv
 合買 pv
-不夠 pv
-不足 pv
 採收 pv
 參加 pv
 倒進 pv
