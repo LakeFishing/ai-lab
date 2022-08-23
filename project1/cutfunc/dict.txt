@@ -26,3 +26,7 @@
 26 add 增
 27 sub 減
 28 and 連接詞
+29 left 剩下
+30 insuf 不夠
+31 spv
+32 snv
