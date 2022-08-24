@@ -1328,13 +1328,27 @@ def additional(name,item,unit,d1,d2):
 
 
         if "=" not in d2 or len(total)!=0:  ##如果沒有=，嘗試用+-找答案
-        
+
+            print(item)
+            print(point)
+                    
             if item !="" and item in d2:
+
                 
+                print(d2[item][2])
                 point = d2[item][2][0]
-                
-                point = d1[point][2][0]
-                
+                print(point)
+               
+                if name == "小欣":
+                    point = d1[point][2][1]
+                    
+                else:
+                    point = d1[point][2][0]
+
+                print(point)
+
+                print(d2)
+                print(d1)
                 
                 if d1[point][0].isdecimal():  ##如果前一個位置的值可以轉為整數，則return這個數字
                     total.append(int(d1[point][0])) 
@@ -1346,6 +1360,7 @@ def additional(name,item,unit,d1,d2):
 
             if point!="":
                 past = d1[point][1][0]
+                print(past)
                 if d1[past][0].isdecimal():  ##如果前一個位置的值可以轉為整數，則return這個數字
                     final_num = int(d1[past][0])
                 else:
@@ -1479,8 +1494,8 @@ def additional(name,item,unit,d1,d2):
             final_num+=sum_[i]
             print(final_num)
 
-        print(d1)
-        print(d2)    
+        # print(d1)
+        # print(d2)    
         final_num+=total[0]
             
     else:
@@ -1895,6 +1910,7 @@ def question6(people,obj,name,item,unit,d1,d2,d3,quan,peoples):
         
     elif len(peoples)==2:
 
+        print(peoples)
         u1 = additional(peoples[0],item,unit,d1,d2)
         print(u1)
         u2 = additional(peoples[1],item,unit,d1,d2)
