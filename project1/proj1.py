@@ -14,7 +14,8 @@ def proj1():
          'equal': '10', 'place': '11', 'range': '12', 'total': '13',
          'special': '14', 'passive': '15', 'bigger': '16', 'smaller': '17',
          'after': '18', 'before': '19', 'p': '20', 'add': '21', 'sub': '22', 'and': '23',
-         'dunit': '24', 'bunit': '25', 'cunit': '26', 'tunit': '27',
+         'dunit': '24', 'bunit': '25', 'cunit': '26', 'tunit': '27', 
+         'left':'28', 'insuf':'29', 'spv':'30', 'snv':'31'
          }
 
     colA = ws['A']
@@ -74,7 +75,7 @@ def proj1():
         #print(colA_position)
         
         #input矩陣25x25
-        t_input=np.zeros([28,28])
+        t_input=np.zeros([32,32])
         
         for i in range(len(colA_position)):  #(col1,col2)=1填入矩陣
             t_input[colB_position[i]][colA_position[i]]=1
@@ -148,7 +149,7 @@ def proj1():
     
 
     #input矩陣25x25
-    tr_input=np.zeros([28,28])
+    tr_input=np.zeros([32,32])
     for r in range(len(colF_position)):  #(colE,colF)=1填入矩陣
         tr_input[colF_position[r]][colE_position[r]]=1
     #print(tr_input) #二維矩陣
