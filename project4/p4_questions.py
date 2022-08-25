@@ -1225,9 +1225,12 @@ def additional(name,item,unit,d1,d2):
             if d2[item][0][j] in temp_pos:
                 break
             else:
-                
-                opr = d2[item][1][j]
-                add = d2[item][3][j]
+                if len(d2[item][3]) >= 2:
+                    opr = d2[item][1][j]
+                    add = d2[item][3][1]
+                else:
+                    opr = d2[item][1][j]
+                    add = d2[item][3][j]
 
                 if opr=="+" :
                     add = 0-add
@@ -1245,8 +1248,11 @@ def additional(name,item,unit,d1,d2):
                 temp_pos.append(d2[item][0][j])
         
         for i in total:
-
-            final_num+=i
+            print(total)
+            if is_plus == False:
+                final_num-=i
+            else: 
+                final_num+=i
         for i in sum_:
             final_num+=i
                 
@@ -1515,8 +1521,11 @@ def additional(name,item,unit,d1,d2):
 
         
         if name in temp_name :
-            final_num+= sum_[0]
-            print(final_num)
+            if len(temp_name) == 2 and temp_name[0] == temp_name[1]:
+                final_num =0
+            else:
+                final_num+= sum_[0]
+                print(final_num)
         else :
             for i in range(len(sum_)):
 
@@ -1768,6 +1777,8 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
         
         
         final_num = additional("","",unit,d1,d2)
+        print(name)
+        print(temp_name)
 
         
             
@@ -2866,7 +2877,7 @@ def question12(name,item,unit,d1,d2):  ##是非題
             # print(total)
         elif opr =="+":
             sum_+=add
-        else:
+        elif opr =="-":
             sum_-=add
 
     for i in total:
