@@ -1011,7 +1011,7 @@ def question4(people,name,item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問
 
         ##如果是從比較中去找出數值
         ##我有10元，你比我多5元。你有多少元?   
-        
+        print(name)
         final_num = additional(name,"",unit,d1,d2)
         
 
@@ -1213,6 +1213,8 @@ def additional(name,item,unit,d1,d2):
 
         if name in d2:
             final_pos = d2[name][0]
+            print(name)
+            print(final_pos)
         
     elif item!="" and '=' in d2[item][1] and len(d2[item][1])>1:
 
@@ -1324,12 +1326,14 @@ def additional(name,item,unit,d1,d2):
             point = final_pos[0]  ##預設指標指向終點第一個位置
         else:
             list_ = final_pos[::-1]
-
+            print(list_)
             
             for i in list_:
 
                 if i in d2[unit][2]:
                     point =i
+                    print(point)
+                    print(total)
                     break   
         
     else:
@@ -1409,12 +1413,16 @@ def additional(name,item,unit,d1,d2):
                 
                 pos = d2[i][0]  ##底層位置
                 
-                #print(pos,point)
+                print(pos,point)
                 
                 if point in pos and point not in temp_pos and point in d2[unit][2]: #and len(pos)>1  如果point位置沒有在temp_pos中，則做計算
                     
                     x = pos.index(point)  ##指標在這個位置的第幾項
-
+                    print(x)
+                    print(i)
+                    print(temp_name)
+                    print("============================")
+                    print(name)
                     opr = d2[i][1][x]  ##找出+-
                     add = d2[i][3][x]
 
@@ -1506,16 +1514,21 @@ def additional(name,item,unit,d1,d2):
     if name!="" or (item!="" and d2[item][1][0]!="none") :  ##如果主事者不為空或是物品不為空(且+-=不為none)，則只要做一次計算
 
         
-
-        for i in range(len(sum_)):
-
-            print(sum_)
-            final_num+=sum_[i]
+        if name in temp_name :
+            final_num+= sum_[0]
             print(final_num)
+        else :
+            for i in range(len(sum_)):
 
-        # print(d1)
-        # print(d2)
-        # print(total)
+
+                # print(i)
+                print(sum_)
+                final_num+=sum_[i]
+                print(final_num)
+
+        print(d1)
+        print(d2)
+        print(total)
         # print(item)    
         final_num+=total[0]
         if item == "淑女車":
@@ -1964,21 +1977,28 @@ def question6(people,obj,name,item,unit,d1,d2,d3,quan,peoples):
 
         if u1 == u2 :
 
-            final_num = u1
+            if is_plus == False:
+                final_num = total[0] + u1
+            else :
+                final_num = u1
         
             return abs(final_num)
 
         if is_plus==False :
 
-            ##例如 : 我有20元，你比我多10元。你和我共有多少元?
-
+            ##例如 : 我有20元，你比我多10元。你和我共有多少元?            
             u1 = additional(name,item,unit,d1,d2)
-            u2 = additional(obj,item,unit,d1,d2)
+            # u2 = additional(obj,item,unit,d1,d2)
+            u2 = total[0]
+            print(879)
+            print(u1)
+            print(u2)
 
             if is_differ==True:
                 final_num = abs(u1-u2)
             else:
                 final_num = abs(u1+u2)
+                print(final_num)
             return abs(final_num)
 
         elif is_differ==True:
