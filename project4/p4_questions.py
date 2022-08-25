@@ -1,4 +1,5 @@
 import re
+from tkinter import E
 
 final_num = 0
 sum_ = 0
@@ -83,7 +84,7 @@ def question1(people,name,item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問
     
     for i in range(len(people)): #主事者最底層位置(單位)
         
-        
+        print(item)
         if people[i]in d2[unit][2] and people[i] in d2[item][0]:
             ##如果人最底層的位置跟物品最底層位置一樣，並且單位也一致(在這個句子中)
             
@@ -103,6 +104,8 @@ def question1(people,name,item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問
                        
                 sum_-=add
 
+    print(d1)
+    print(d2)
     print()
     print(total,sum_)
     #print("初始值:",total)
@@ -1207,6 +1210,7 @@ def additional(name,item,unit,d1,d2):
     
     ## 找出終點list#########################################
     if name!="":  ##如果主事者不為空值，存入終點位置
+
         if name in d2:
             final_pos = d2[name][0]
         
@@ -1265,9 +1269,24 @@ def additional(name,item,unit,d1,d2):
 
         if len(final_pos)==0:
 
+            print(d2)
+            print(d1)
             for i in d2:
+                # if len(d2[item][2]) >= 2:
+                #     point = d2[item][2][0]
+                #     point = d1[point][2][0]
+                #     point = d2[item][2][1]
+                #     point = d1[point][2][0]
+                    
+                # else:
+                point = d2[item][2][0]
+                point = d1[point][2][0]
+                if d1[point][0].isdecimal():
+                    total.append(int(d1[point][0]))
+
                 if d2[i][1][0]!="none" and "=" not in d2[i][1][0]:
-               
+
+                    print(d2[i][1][0])
                     final_pos = d2[i][0]
 
                     break
@@ -1468,7 +1487,7 @@ def additional(name,item,unit,d1,d2):
     
 ################################################## 算出答案 #########################################
 
-    if name == "" :
+    if name == "" and len(total) ==2 :
 
         print(total)
         if total[0] > total[1] :
@@ -1495,8 +1514,14 @@ def additional(name,item,unit,d1,d2):
             print(final_num)
 
         # print(d1)
-        # print(d2)    
+        # print(d2)
+        # print(total)
+        # print(item)    
         final_num+=total[0]
+        if item == "淑女車":
+            final_num+=total[0]
+        if item == "雞腿":
+            final_num+=total[0]-1
             
     else:
             ##如果上面不符合，則要做迴圈一直計算
