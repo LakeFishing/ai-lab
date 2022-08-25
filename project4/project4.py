@@ -801,6 +801,16 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
         
         print("1.人名:",name,"2.物品:",item,"3.單位:",unit)
 
+        if is_plus == False:
+            # print(name)
+            # print(peoples)
+            # print(d1)
+            for i in d1:
+                # print(d1[i][0])
+                if name not in d1[i][0]:
+                    total = 0
+                return "","","","無解",""
+
         if unit=="人" and "個" in d2:
             
             total = p4_questions.question5(unit,d1,d2,d3,quan)
@@ -857,7 +867,7 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
     else:
         if true_false==True:
             total =p4_questions.question12(name,item,unit,d1,d2)
-            return "","",total,"",""
+            return "","","",total,""
         else:
             print("題目有誤")
 
@@ -867,11 +877,11 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
 
         if quan>0 and quan>total:
             
-            return "","","不夠","",""
+            return "","","","不夠",""
         
         else:
             
-            return "","","夠","",""
+            return "","","","夠",""
 
     if obj!="":
         name=name+"和"+obj+sum_or_diff
