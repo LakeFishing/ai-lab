@@ -41,6 +41,8 @@ from . import p3_show2     ##句子語意網路繪圖
 from . import p3_show3     ##問題語意網路繪圖
 from . import p3_output    ##把語意網路連結成問題語意網路格式，輸出成txt檔給project4用
 
+# import project4.project4 as proj4
+
 import os
 import time
 
@@ -180,7 +182,8 @@ def main():
     #         wb = load_workbook(filename= '../output/' + file)
     #         sheet = wb.active
     #         read3(sheet)
-    
+    #         ans = proj4.initial()
+    #         print(ans)
     # wb = load_workbook(filename = '../output/proj2_5.xlsx')
     wb = load_workbook(filename = 'proj2.xlsx')
     sheet = wb.active
