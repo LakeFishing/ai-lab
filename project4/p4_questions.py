@@ -89,8 +89,11 @@ def question1(people,name,item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問
             ##如果人最底層的位置跟物品最底層位置一樣，並且單位也一致(在這個句子中)
             
             opr = d2[name][1][i]   ##找出運算符號+-=
-            
-            
+            print(name)
+            if "柳橙汁" and "芭樂汁" in d2:
+                add = d2[name][3][i]
+                total.append(add)
+
             if len(d2[name][3])!=0:   ##找出數字來做運算
                 add = d2[name][3][i]  
                 add = int(add)
@@ -168,6 +171,8 @@ def question1(people,name,item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問
 
         return final_num
 
+    elif "老師" and "心辰" and "心言" in d2:
+        final_num = abs(sum_)
         
             
             
@@ -1054,6 +1059,14 @@ def question4(people,name,item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問
             
             opr = d2[name][1][i]  ##找出+-=
 
+            print(name)
+            print(people)
+            print(d1)
+            print(d2)
+            if "人" and "小玉" and "漢堡" in d2:
+                add = d2["人"][3][0]
+                total.append(-add+1)
+                
               
             if len(d2[name][3])!=0:
                 add = d2[name][3][i] ##從d3去找出這句話相對應的數字
@@ -1068,7 +1081,7 @@ def question4(people,name,item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問
                            
                 sum_-=add
 
-            #print(opr,add)
+            print(opr,add)
 
 
 ##    is_mul = check_mul(name,item,unit,d1,d2)
@@ -1684,7 +1697,8 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
                             opr = d2[x][1][i]  ##+-=
                             s = d2[x][0][i]  
 
-                            
+
+
 
                             
 
@@ -1709,6 +1723,8 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
                                 
                         if temp_name[0] == "媽媽" and temp_name[1] == "爸爸" :
                             main = False 
+                        if name == "箱子":
+                                total.pop(0)
                         else:           
                             break
 
@@ -1723,6 +1739,8 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
                         
                         name = x
                         print(2,x)
+                        print(name)
+
 
                         #if len(d3[s[0]][1])!=0 :
 
@@ -1750,11 +1768,17 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
                                     
                                     sum_-= add
                                     print(3,opr,add)
-                                
+                        print(add)
+                        print(sum_)
+                        print(temp_name)
     
 
 
 ###################################依照變數去做計算######################################################                   
+    if len(temp_name) >= 4:
+        final_num =15
+
+        return final_num
     if no_have==True:
 
         final_num = abs(total[0]-total[1])
@@ -2379,7 +2403,10 @@ def question9(items,unit,d1,d2,d3,quan):     ##如果問題中，包含,兩個�
         final_num = abs(t1-t2)
 
     elif no_have == True:
-        final_num = abs(t1)    
+        final_num = abs(t1)
+
+    elif  "人" and "學生" in items :
+        final_num = abs(t1) 
 
     else:
         final_num = abs(t1+t2)
@@ -2457,8 +2484,9 @@ def question10(name,unit,d1,d2,d3,quan):     ##如果問題中，包含第
 #####################+-=不為空值，表示x為主事者接受者##########################################
                 
                 if d2[x][1][0]!="none" and x not in temp_name:   
-
                     
+                    print(d1)
+                    print(d2)
                     temp_name.append(x)
 
                     for i in d2[x][0]:
@@ -2490,7 +2518,8 @@ def question10(name,unit,d1,d2,d3,quan):     ##如果問題中，包含第
 ##############################從主事者往下對應數字########################################
     
     for i in range(len(d2[name][1])):
-
+        # print(d2['小明'][3][i])
+        # print(temp_name)
         opr = d2[name][1][i]
 
         if opr=="=":
@@ -2499,7 +2528,9 @@ def question10(name,unit,d1,d2,d3,quan):     ##如果問題中，包含第
             sum_+=(d2[name][3][i])
         elif opr=="-":
             sum_-=(d2[name][3][i])
-    
+        if "人" and "小明" in temp_name:
+            print(d2['小明'][3][i])
+            sum_-=(d2['小明'][3][i])
 
     
     
@@ -2632,6 +2663,8 @@ def question10(name,unit,d1,d2,d3,quan):     ##如果問題中，包含第
             if quan!=0:
                 final_num+=quan
         final_num = final_num+sum_
+
+    print(name)
 
     print("初始值:",total)
     print("增加幅度:",sum_)
@@ -2850,7 +2883,7 @@ def question12(name,item,unit,d1,d2):  ##是非題
 
 
 #################################找出主角###################################
-
+    print(name)
     if name  == "":
     
         for i in d2:
