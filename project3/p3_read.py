@@ -375,6 +375,9 @@ def load_excel(i,sheet,is_first):   ##匯入詞彙進行處理
                 if sheet.cell(row=i-1,column=j).value=="已經":
                     yet = True
                 list8.append(sheet.cell(row=i-1,column=j).value)
+
+                if sheet.cell(row=i-1,column=j).value=="後":
+                    list8.pop()
     
     
     
