@@ -231,7 +231,7 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
             is_differ = True
 
 
-        if q2[i] =="特點" and q1[i] =="可以":   ##判斷是否用原本的數值下去扣
+        if q2[i] =="=" and q1[i] =="可以":   ##判斷是否用原本的數值下去扣
 
             true_false = True
 
@@ -517,6 +517,8 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
     if is_sort ==True: ##如果問題裡面有"第"
 
         total = p4_questions.question10(name,unit,d1,d2,d3,quan)
+        if "前面" in d2:
+            total += 1
         #print()
         #print("解題")
         #print(q1)
@@ -869,6 +871,7 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
             total =p4_questions.question12(name,item,unit,d1,d2)
             return "","","",total,""
         else:
+            print(true_false)
             print("題目有誤")
 
     
