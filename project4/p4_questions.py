@@ -1724,7 +1724,10 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
                         if temp_name[0] == "媽媽" and temp_name[1] == "爸爸" :
                             main = False 
                         if name == "箱子":
-                                total.pop(0)
+                            total.pop(0)
+                        if name == "姐姐" and "已經" in d2:
+                            final_num = sum_ - int(add*2)
+                            return abs(final_num)
                         else:           
                             break
 
