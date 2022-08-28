@@ -933,8 +933,8 @@ def initial():  ##讀檔
         
     #ans = name+""+opr+""+item+""+str(total)+""+unit
     ans = str(total)+""+unit
-    # with open('appendAns.txt', 'a') as k:
-    #     k.write(ans +'\n')
+    with open('appendAns.txt', 'a') as k:
+        k.write(ans +'\n')
 
     f.close()
     q.close()
