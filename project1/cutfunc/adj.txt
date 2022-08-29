@@ -13,6 +13,7 @@
 紫 adj
 完 adj
 青 adj
+上 adj
 所有 adj
 故障 adj
 粉紅 adj
