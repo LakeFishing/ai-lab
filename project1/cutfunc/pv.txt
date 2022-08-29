@@ -11,6 +11,7 @@
 賺 pv
 吹 pv
 放 pv
+來 pv
 投了 pv
 集了 pv
 打中 pv
@@ -65,7 +66,6 @@
 買來 pv
 加起來 pv
 上來 pv
-放進去 pv
 進貨 pv
 進入 pv
 跳來 pv

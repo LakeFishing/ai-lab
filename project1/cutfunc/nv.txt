@@ -20,6 +20,7 @@
 省下 nv
 破了 nv
 用掉 nv
+用 nv
 走了 nv
 後退 nv
 退出 nv
