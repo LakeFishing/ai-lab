@@ -296,6 +296,11 @@ def load_excel(i,sheet,is_first):   ##匯入詞彙進行處理
                 #     list4.append("+")
                 #     list5.append(sheet.cell(row=i,column=j).value)
                 #     temp_plus = "+"
+
+                elif sheet.cell(row=i-1,column=j).value in ['養了'] and sheet.cell(row=i,column=j).value=="+" :
+                    list4.append("=")
+                    list5.append(sheet.cell(row=i,column=j).value)
+                    temp_plus = "="
                     
                 elif sheet.cell(row=i-1,column=j).value!="比":
 
