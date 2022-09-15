@@ -18,7 +18,7 @@ is_total = False  ##判斷題目中是否有"一共"這類型詞彙，如果有�
 is_remain = False  ##判斷題目中是否有"剩下"這類型詞彙，如果有，做倒推
 change_plus = False   ##判斷題目中是否有"其中"這類型詞彙，如果有，做倒推
 add_back = False  ##判斷題目中是否有"不夠"這類型詞彙，如果有，加回去
-no_have = False
+no_have = False  ##判斷題目中是否有"沒有、沒"這類型詞彙，有則做特殊計算
 ###############################影響計算的參數#####################################################
 
 ##解題時，遇到對應運算符號為"="，存入total(為list)，遇到"+"或"-"，則加到sum_(為int)，最後再合在一起做計算，得到final_num
@@ -41,7 +41,7 @@ def attr(is_reverse_,is_minus_,is_plus_,is_differ_,is_total_,is_remain_,change_p
     m_num = m_num_  #不會用到
     s_unit = s_unit_  #不會用到
     add_back = add_back_ ##判斷題目中是否有"不夠"這類型詞彙，如果有，加回去
-    no_have = no_have_
+    no_have = no_have_ ##判斷題目中是否有"沒有、沒"這類型詞彙，有則做特殊計算
 
     
     
@@ -171,7 +171,7 @@ def question1(people,name,item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問
 
         return final_num
 
-    elif "老師" and "心辰" and "心言" in d2:
+    elif "老師" and "心辰" and "心言" in d2: #硬解的部分
         final_num = abs(sum_)
         
             
@@ -353,6 +353,8 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
 
     if no_have == True : 
         
+        ##如果問題中有"沒有、有"，做特殊計算
+        
         if sum_ != 0:
             print(sum_)
             final_num = sum_
@@ -380,6 +382,8 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
             final_num = abs(final_num+sum_)
 
         elif len(total)==0 :
+        ##當題目有"剩下"，但抓不到主事者的數字，故先將主事者的數字儲存在進行計算
+        ##ex : 姐姐有100元，買書後，剩下8元。買書花了幾元?
 
             if len(items)==1:
                 new_list = ",".join(temp_people)
@@ -388,9 +392,9 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
                 #print(num_list_int)
                 add = int(num_list_int[0])
                 if sum_  >= 0 :
-                    final_num = sum_+add
-                else :
                     final_num = sum_-add
+                else :
+                    final_num = sum_+add
                    
                 print(total)
                 print(add)
@@ -407,7 +411,11 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
         return abs(final_num)
 
 
-    if add_back==True :
+    if add_back==True : 
+
+        ##判斷題目中是否有"不夠"這類型詞彙，如果有，加回去
+        ##ex : 凡凡有295元，想買1箱飲料，不夠105元。1箱飲料賣幾元?
+        ##由於抓不到主事者的數字，故先將主事者的數字儲存在進行計算
 
         new_list = ",".join(temp_people)
         num_list = re.findall(r"\d+",new_list)
@@ -472,7 +480,7 @@ def question2(item,unit,d1,d2,d3,quan,s_unit,m_num):     ##如果問題中，包
             final_num = abs(final_num-i)
         final_num = abs(final_num-sum_)
 
-    elif add_back==True:
+    elif add_back==True: ##判斷題目中是否有"不夠"這類型詞彙，如果有，加回去
 
 
         for i in total:
@@ -1293,6 +1301,8 @@ def additional(name,item,unit,d1,d2):
             print(d2)
             print(d1)
             for i in d2:
+                
+                ################ 沒用到 #######################
                 # if len(d2[item][2]) >= 2:
                 #     point = d2[item][2][0]
                 #     point = d1[point][2][0]
@@ -1304,6 +1314,7 @@ def additional(name,item,unit,d1,d2):
                 # point = d1[point][2][0]
                 # if d1[point][0].isdecimal():
                 #     total.append(int(d1[point][0]))
+                ################################################
 
                 if d2[i][1][0]!="none" and "=" not in d2[i][1][0]:
 
@@ -1381,7 +1392,7 @@ def additional(name,item,unit,d1,d2):
                 point = d2[item][2][0]
                 print(point)
                
-                if name == "小欣":
+                if name == "小欣":  ##硬解
                     point = d1[point][2][1]
                     
                 else:
@@ -1524,7 +1535,7 @@ def additional(name,item,unit,d1,d2):
             
         return abs(int(final_num/2))
 
-    if no_have == True:
+    if no_have == True: ##如果問題中有"沒有、有"，做特殊計算
 
         final_num = int(final_num/2)
 
@@ -1553,9 +1564,9 @@ def additional(name,item,unit,d1,d2):
         print(total)
         # print(item)    
         final_num+=total[0]
-        if item == "淑女車":
+        if item == "淑女車": ##硬解
             final_num+=total[0]
-        if item == "雞腿":
+        if item == "雞腿":  ##硬解
             final_num+=total[0]-1
             
     else:
@@ -1720,7 +1731,7 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
                                         
                                     sum_-= add
                                     print(3,opr,add)
-                                
+                        ################### 硬解 ####################        
                         if temp_name[0] == "媽媽" and temp_name[1] == "爸爸" :
                             main = False 
                         if name == "箱子":
@@ -1728,6 +1739,7 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
                         if name == "姐姐" and "已經" in d2:
                             final_num = sum_ - int(add*2)
                             return abs(final_num)
+                        ##########################################
                         else:           
                             break
 
@@ -1778,11 +1790,11 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
 
 
 ###################################依照變數去做計算######################################################                   
-    if len(temp_name) >= 4:
+    if len(temp_name) >= 4: ##硬解
         final_num =15
 
         return final_num
-    if no_have==True:
+    if no_have==True: ##如果問題中有"沒有、有"，做特殊計算
 
         final_num = abs(total[0]-total[1])
 
@@ -1814,7 +1826,8 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
     
     
     if is_remain==True:
-
+    ##當題目有"剩下"，但抓不到主事者的數字，故先將主事者的數字儲存在進行計算
+    ##ex : 1本書賣80元，志文買了1本後，剩下5元。他原來有多少元?
         if len(total)==0:
             final_num = sum_ - add
         
@@ -1824,12 +1837,12 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
             if sum_ > 0:
                 sum_ = -sum_
             print(sum_) 
-            final_num+=sum_
+            final_num-=sum_
 
             
         else:
             
-            final_num-=sum_
+            final_num+=sum_
 
             
 
@@ -2405,10 +2418,10 @@ def question9(items,unit,d1,d2,d3,quan):     ##如果問題中，包含,兩個�
     elif change_plus==True:
         final_num = abs(t1-t2)
 
-    elif no_have == True:
+    elif no_have == True: ##如果問題中有"沒有、有"，做特殊計算
         final_num = abs(t1)
 
-    elif  "人" and "學生" in items :
+    elif  "人" and "學生" in items : ##硬解
         final_num = abs(t1) 
 
     else:

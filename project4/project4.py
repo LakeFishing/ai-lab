@@ -17,6 +17,8 @@
 # is_remain = False  ##判斷題目中是否有"剩下"這類型詞彙，如果有，做倒推
 # change_plus = False   ##判斷題目中是否有"其中"這類型詞彙，如果有，做倒推
 # plus_one = False  ##判斷是否要加1(當題目是排隊問題，問總排隊人數)
+# add_back = False  ##判斷題目中是否有"不夠"這類型詞彙，如果有，加回去
+# no_have = False ##判斷題目中是否有"沒有、沒"這類型詞彙，有則做特殊計算
 ###############################影響計算的參數#####################################################
 
 
@@ -129,7 +131,7 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
 
     add_back = False  ##判斷是否加回去
 
-    no_have = False
+    no_have = False ##判斷題目中是否有"沒有、沒"這類型詞彙
 
     is_total = False ##問題中是否有"一共"
 
@@ -469,7 +471,8 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
 
     if "不夠" in d2:
         add_back = True
-    
+
+    #no_have :判斷題目中是否有"沒有、沒"這類型詞彙
     if "沒" in d2:
         no_have = True
 
@@ -803,7 +806,7 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
         
         print("1.人名:",name,"2.物品:",item,"3.單位:",unit)
 
-        if is_plus == False and len(peoples)!= 0:
+        if is_plus == False and len(peoples)!= 0: #比較題，並且題目問句中的主事者未出現在name裡
             # print(name)
             # print(peoples)
             # print(d1)
