@@ -1300,10 +1300,10 @@ def additional(name,item,unit,d1,d2):
                 #     point = d1[point][2][0]
                     
                 # else:
-                point = d2[item][2][0]
-                point = d1[point][2][0]
-                if d1[point][0].isdecimal():
-                    total.append(int(d1[point][0]))
+                # point = d2[item][2][0]
+                # point = d1[point][2][0]
+                # if d1[point][0].isdecimal():
+                #     total.append(int(d1[point][0]))
 
                 if d2[i][1][0]!="none" and "=" not in d2[i][1][0]:
 

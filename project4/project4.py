@@ -803,7 +803,7 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
         
         print("1.人名:",name,"2.物品:",item,"3.單位:",unit)
 
-        if is_plus == False:
+        if is_plus == False and len(peoples)!= 0:
             # print(name)
             # print(peoples)
             # print(d1)
