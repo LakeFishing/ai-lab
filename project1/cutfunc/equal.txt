@@ -10,4 +10,6 @@
 有多少 equal
 一樣多 equal
 一樣少 equal
+就可以 equal
 剛好可以 equal
+正好可以 equal
