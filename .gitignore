@@ -5,3 +5,4 @@ project3/*.txt
 project1/process/proj1.xlsx
 project1/process/斷詞.xls
 project1/process/斷詞.xlsx
+*.pyc
