@@ -8,10 +8,10 @@ import project3.project3 as proj3
 import project4.project4 as proj4
 
 def ans():
-    # cut()
-    # proj1()
-    # predict_q()
-    # predict_eg()
+    cut()
+    proj1()
+    predict_q()
+    predict_eg()
 
     proj3.main()
 

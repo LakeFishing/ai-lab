@@ -1724,12 +1724,12 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
                                     print(3,opr,add)
 
                                 elif opr=="-":
-                                    sum_+= add
+                                    sum_-= add
                                     print(3,opr,add)
                                         
                                 elif opr=="+":
                                         
-                                    sum_-= add
+                                    sum_+= add
                                     print(3,opr,add)
                         ################### 硬解 ####################        
                         if temp_name[0] == "媽媽" and temp_name[1] == "爸爸" :
@@ -1777,11 +1777,11 @@ def question5(unit,d1,d2,d3,quan):     ##如果問題中，包含單位。題目
                                     print(3,opr,add)
 
                                 elif opr=="-":
-                                    sum_+= add
+                                    sum_-= add
                                     print(3,opr,add)
                                 elif opr=="+":
                                     
-                                    sum_-= add
+                                    sum_+= add
                                     print(3,opr,add)
                         print(add)
                         print(sum_)
