@@ -11,6 +11,7 @@
 賺 pv
 吹 pv
 放 pv
+來 pv
 投了 pv
 集了 pv
 打中 pv
@@ -23,7 +24,6 @@
 蒐集 pv
 收集 pv
 批改 pv
-剩下 pv
 前進 pv
 收服 pv
 養了 pv
@@ -31,7 +31,6 @@
 烤了 pv
 跳上 pv
 得到 pv
-放入 pv
 盛好 pv
 爬到 pv
 開了 pv
@@ -42,8 +41,6 @@
 買了 pv
 買進 pv
 合買 pv
-不夠 pv
-不足 pv
 採收 pv
 參加 pv
 倒進 pv
@@ -69,9 +66,6 @@
 買來 pv
 加起來 pv
 上來 pv
-合買 pv
-放進 pv
-放進去 pv
 進貨 pv
 進入 pv
 跳來 pv

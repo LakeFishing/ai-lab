@@ -5,10 +5,12 @@
 正好 equal
 原價 equal
 才會 equal
-找回 equal
+就有 equal
 剛好夠 equal
 本來有 equal
 有多少 equal
 一樣多 equal
 一樣少 equal
+就可以 equal
 剛好可以 equal
+正好可以 equal

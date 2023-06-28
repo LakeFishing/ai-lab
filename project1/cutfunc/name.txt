@@ -144,7 +144,6 @@
 小姿 name
 父親 name
 嬿晴 name
-小甄 name
 母親 name
 妙妙 99 name
 美莉 name
@@ -182,7 +181,6 @@
 小睿 name
 小荃 name
 丙魚 name
-小寶 name
 姑姑 name
 叔叔 name
 我們 name
@@ -228,7 +226,6 @@
 美華 name
 美環 name
 阿噗 name
-阿福 name
 阿吉 name
 美美 name
 強強 name
@@ -241,7 +238,6 @@
 恩綺 name
 詩真 name
 文品 name
-心辰 name
 廷恩 name
 芯琳 name
 紹瑋 name
@@ -262,7 +258,6 @@
 志光 name
 明亮 name
 佳佳 name
-小杰 name
 婕穎 name
 王恩 name
 外婆 name
@@ -274,11 +269,9 @@
 爺爺 name
 小志 name
 小智 name
-珍華 name
 紋珊 name
 安娜 name
 愛莎 name
-小翰 name
 佳玲 name
 丁噹 name
 信宏 name
@@ -293,12 +286,10 @@
 小葵 name
 小新 name
 成武 name
-小昱 name
 柔柔 name
 小玲 name
 仁哲 name
 品萱 name
-小欣 name
 小立 name
 小莉 name
 小力 name
@@ -320,19 +311,16 @@
 亦君 name
 小瑛 name
 安安 name
-凱凱 name
 老師 name
 辛巴 name
 娜娜 name
 曉鈴 name
 小鈴 name
-丁丁 name
 艾德 name
 丁滿 name
 小敏 name
 耀啟 name
 紀薇 name
-小英 name
 阿亮 name
 小美 name
 千尋 name
@@ -340,11 +328,8 @@
 小梅 name
 小鳳 name
 阿月 name
-小偉 name
-小瑋 name
 心婷 name
 以柔 name
-奇奇 name
 琪琪 name
 小惠 name
 小聖 name
@@ -404,7 +389,6 @@
 聖芬 name
 阿寶 name
 小皮 name
-小雨 name
 小羽 name
 小芯 name
 拉拉 name
@@ -423,7 +407,6 @@
 羽曼 name
 阿鵝 name
 小祥 name
-小翔 name
 阿香 name
 恩秀 name
 明美 name
@@ -448,14 +431,11 @@
 詩詩 name
 小弟 name
 小淯 name
-小恩 name
 凱翔 name
 風間 name
 正男 name
 阿呆 name
-小王 name
 小許 name
-小正 name
 小信 name
 育如 name
 阿利 name
@@ -464,7 +444,6 @@
 司南 name
 錦玟 name
 麗秋 name
-美華 name
 小華 name
 小銘 name
 大哥 name
@@ -527,8 +506,6 @@
 鐵扇公主 name
 白雪公主 name
 多啦A夢 name
-小華 name
 小香 name
-小奇 name
 小奇 name
 暖暖 name

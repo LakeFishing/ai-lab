@@ -54,7 +54,6 @@
 頁 bunit
 顆 bunit
 朵 bunit
-碗 bunit
 瓶 bunit
 片 bunit
 本 bunit
@@ -68,7 +67,6 @@
 條 bunit
 尾 bunit
 隻 bunit
-位 bunit
 間 bunit
 層 bunit
 度 bunit
@@ -85,16 +83,12 @@
 塊 bunit
 罐 bunit
 節 bunit
-捆 bunit
 打 bunit 
 根 bunit
-位 bunit
 格 bunit
 段 bunit
 支 bunit
 項 bunit
-綑 bunit
-艘 bunit
 頂 bunit
 號 bunit
 種 bunit

@@ -71,6 +71,10 @@ jieba.load_userdict("project1/cutfunc/p.txt")
 jieba.load_userdict("project1/cutfunc/add.txt")
 jieba.load_userdict("project1/cutfunc/sub.txt")
 jieba.load_userdict("project1/cutfunc/unit.txt")
+jieba.load_userdict("project1/cutfunc/left.txt")
+jieba.load_userdict("project1/cutfunc/insuf.txt")
+jieba.load_userdict("project1/cutfunc/spv.txt")
+jieba.load_userdict("project1/cutfunc/snv.txt")
 import jieba.posseg as psg
 
 def cutall(text):

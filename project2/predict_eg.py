@@ -40,7 +40,7 @@ def predict_eg():
         length = sum(inputData)
 
         inputData = np.array(inputData)
-        inputData = inputData.reshape(1, 28, 28, 1)
+        inputData = inputData.reshape(1, 32, 32, 1)
         inputData = inputData.astype('float32')
         pred01 = model01.predict(inputData)
         li.append(pred01.argmax())

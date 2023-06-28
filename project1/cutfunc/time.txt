@@ -3,7 +3,6 @@
 日 time
 秒 time
 時 time
-閏年 time
 今天 time
 明天 time
 昨天 time
