@@ -17,9 +17,11 @@
 # change_plus = False   ##判斷題目中是否有"其中"這類型詞彙，如果有，做倒推
 # plus_one = False  ##判斷是否要加1(當題目是排隊問題，問總排隊人數)
 # add_back = False  ##判斷題目中是否有"不夠"這類型詞彙，如果有，加回去
+# no_have = False ##判斷題目中是否有"沒有、沒"這類型詞彙，有則做特殊計算
 ###############################影響計算的參數#####################################################
 
 
+from re import T
 from tkinter import *
 from random import randint
 import pyautogui
@@ -160,7 +162,7 @@ def read3(sheet):
 
     
 
-    keys1,keys2,keys3,keys4,keys5,is_plus,is_remain,is_do,is_total,change_plus,plus_one,add_back = p3_read.read(keys1,keys2,keys3,keys4,keys5,sheet,"txt")
+    keys1,keys2,keys3,keys4,keys5,is_plus,is_remain,is_do,is_total,change_plus,plus_one,add_back,no_have = p3_read.read(keys1,keys2,keys3,keys4,keys5,sheet,"txt")
     print("讀取excel，做初步處理")
     
     print("keys1",keys1)
@@ -169,14 +171,14 @@ def read3(sheet):
     print("keys4",keys4)
     print()
     print("進行連結處理")
-    create(keys1,keys2,keys3,keys4,keys5,f,is_plus,is_remain,is_do,is_total,change_plus,plus_one,add_back)  ##進行連結處理
+    create(keys1,keys2,keys3,keys4,keys5,f,is_plus,is_remain,is_do,is_total,change_plus,plus_one,add_back,no_have)  ##進行連結處理
     
         
 
 
 
     
-def create(keys1,keys2,keys3,keys4,keys5,f,is_plus,is_remain,is_do,is_total,change_plus,plus_one,add_back):##連結成語意網路
+def create(keys1,keys2,keys3,keys4,keys5,f,is_plus,is_remain,is_do,is_total,change_plus,plus_one,add_back,no_have):##連結成語意網路
 
     
 
@@ -647,6 +649,9 @@ def create(keys1,keys2,keys3,keys4,keys5,f,is_plus,is_remain,is_do,is_total,chan
 
     if add_back==True:  ##題目有["不夠"]這類詞，例如 : 
         output_list.append(["不夠","a106",["a0"],["none"]])
+    
+    if no_have==True:
+        output_list.append(["沒、沒有","a107",["a0"],["none"]])
 
 ############################把輸出資料寫入txt###########################################################################
         

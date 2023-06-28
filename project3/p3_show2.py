@@ -79,7 +79,7 @@ def draw(cv,sheet):  ##畫出句子語意網路
 
     
     
-    keys1,keys2,keys3,keys4,keys5,is_plus,is_remain,is_do,is_total,change_plus,plus_one, add_back = p3_read.read(keys1,keys2,keys3,keys4,keys5,sheet,"img")
+    keys1,keys2,keys3,keys4,keys5,is_plus,is_remain,is_do,is_total,change_plus,plus_one,add_back,no_have = p3_read.read(keys1,keys2,keys3,keys4,keys5,sheet,"img")
     ##把excel的資料進行處理，return 出list(這邊除了keys1~keys5)，其他可以省略不看
     print("讀取excel，做處理")
     

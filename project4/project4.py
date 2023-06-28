@@ -17,9 +17,12 @@
 # is_remain = False  ##判斷題目中是否有"剩下"這類型詞彙，如果有，做倒推
 # change_plus = False   ##判斷題目中是否有"其中"這類型詞彙，如果有，做倒推
 # plus_one = False  ##判斷是否要加1(當題目是排隊問題，問總排隊人數)
+# add_back = False  ##判斷題目中是否有"不夠"這類型詞彙，如果有，加回去
+# no_have = False ##判斷題目中是否有"沒有、沒"這類型詞彙，有則做特殊計算
 ###############################影響計算的參數#####################################################
 
 
+from doctest import FAIL_FAST
 import sys
 
 sys.dont_write_bytecode = True
@@ -128,6 +131,8 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
 
     add_back = False  ##判斷是否加回去
 
+    no_have = False ##判斷題目中是否有"沒有、沒"這類型詞彙
+
     is_total = False ##問題中是否有"一共"
 
     first_total = False ##原本的句子中是否有"一共"
@@ -228,7 +233,7 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
             is_differ = True
 
 
-        if q2[i] =="特點" and q1[i] =="可以":   ##判斷是否用原本的數值下去扣
+        if q2[i] =="=" and q1[i] =="可以":   ##判斷是否用原本的數值下去扣
 
             true_false = True
 
@@ -467,9 +472,25 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
     if "不夠" in d2:
         add_back = True
 
+    #no_have :判斷題目中是否有"沒有、沒"這類型詞彙
+    if "沒" in d2:
+        no_have = True
+
+    if "沒有" in d2:
+        no_have = True
+
+    if "沒" in q1:
+        no_have = True
+
+    if "沒有" in q1:
+        no_have = True
+
+    if "完" in d2:
+        no_have = True
+
     
     
-    p4_questions.attr(is_reverse,is_minus,is_plus,is_differ,is_total,is_remain,change_plus,quan,m_num,s_unit,add_back)   ##設定解題時的變數
+    p4_questions.attr(is_reverse,is_minus,is_plus,is_differ,is_total,is_remain,change_plus,quan,m_num,s_unit,add_back,no_have)   ##設定解題時的變數
 
     
     if name!="" and len(times)==1 and times[0] in d2 :   ##如果有時間，又有主事者，則時間會變成主事者
@@ -499,6 +520,8 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
     if is_sort ==True: ##如果問題裡面有"第"
 
         total = p4_questions.question10(name,unit,d1,d2,d3,quan)
+        if "前面" in d2:
+            total += 1
         #print()
         #print("解題")
         #print(q1)
@@ -783,6 +806,16 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
         
         print("1.人名:",name,"2.物品:",item,"3.單位:",unit)
 
+        if is_plus == False and len(peoples)!= 0: #比較題，並且題目問句中的主事者未出現在name裡
+            # print(name)
+            # print(peoples)
+            # print(d1)
+            for i in d1:
+                # print(d1[i][0])
+                if name not in d1[i][0]:
+                    total = 0
+                return "","","","無解",""
+
         if unit=="人" and "個" in d2:
             
             total = p4_questions.question5(unit,d1,d2,d3,quan)
@@ -839,8 +872,9 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
     else:
         if true_false==True:
             total =p4_questions.question12(name,item,unit,d1,d2)
-            return "","",total,"",""
+            return "","","",total,""
         else:
+            print(true_false)
             print("題目有誤")
 
     
@@ -849,11 +883,11 @@ def solve(init_list,q1,q2,d1,d2,d3):  ##解題
 
         if quan>0 and quan>total:
             
-            return "","","不夠","",""
+            return "","","","不夠",""
         
         else:
             
-            return "","","夠","",""
+            return "","","","夠",""
 
     if obj!="":
         name=name+"和"+obj+sum_or_diff
@@ -902,6 +936,8 @@ def initial():  ##讀檔
         
     #ans = name+""+opr+""+item+""+str(total)+""+unit
     ans = str(total)+""+unit
+    with open('appendAns.txt', 'a') as k:
+        k.write(ans +'\n')
 
     f.close()
     q.close()

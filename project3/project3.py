@@ -41,6 +41,8 @@ from . import p3_show2     ##句子語意網路繪圖
 from . import p3_show3     ##問題語意網路繪圖
 from . import p3_output    ##把語意網路連結成問題語意網路格式，輸出成txt檔給project4用
 
+# import project4.project4 as proj4
+
 import os
 import time
 
@@ -169,6 +171,20 @@ def test():
 ############這個區塊，如果執行UI.py時，需註解掉。平常自己測試的時候不用註解############
 
 def main():
+    
+    # folder = r'../output'
+    # files = os.listdir(folder)
+    # for file in files:
+    #     if file.endswith('.xlsx'):
+    #         cwd = os.getcwd()  # Get the current working directory (cwd)
+    #         files = os.listdir(cwd)  # Get all the files in that directory
+    #         print("Files in %r: %s" % (cwd, files))
+    #         wb = load_workbook(filename= '../output/' + file)
+    #         sheet = wb.active
+    #         read3(sheet)
+    #         ans = proj4.initial()
+    #         print(ans)
+    # wb = load_workbook(filename = '../output/proj2_40.xlsx')
     wb = load_workbook(filename = 'proj2.xlsx')
     sheet = wb.active
     read3(sheet)
