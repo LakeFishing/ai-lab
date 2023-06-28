@@ -184,8 +184,8 @@ def main():
     #         read3(sheet)
     #         ans = proj4.initial()
     #         print(ans)
-    wb = load_workbook(filename = '../output/proj2_40.xlsx')
-    # wb = load_workbook(filename = 'proj2.xlsx')
+    # wb = load_workbook(filename = '../output/proj2_40.xlsx')
+    wb = load_workbook(filename = 'proj2.xlsx')
     sheet = wb.active
     read3(sheet)
 
